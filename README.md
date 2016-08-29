@@ -1,0 +1,1 @@
+# webext-i18n
