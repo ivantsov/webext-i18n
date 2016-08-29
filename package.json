@@ -1,0 +1,42 @@
+{
+  "name": "webext-i18n",
+  "version": "1.0.0",
+  "description": "FILL IT OUT",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivantsov/webext-i18n.git"
+  },
+  "keywords": [
+    "web-extension",
+    "extension",
+    "webext",
+    "i18n",
+    "internalization",
+    "localization",
+    "chrome",
+    "firefox"
+  ],
+  "author": "Alexander Ivantsov <alexivantsov@ya.ru> (https://github.com/ivantsov)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ivantsov/webext-i18n/issues"
+  },
+  "homepage": "https://github.com/ivantsov/webext-i18n#readme",
+  "dependencies": {
+    "fs-extra": "^0.30.0"
+  },
+  "devDependencies": {
+    "jest": "^14.1.0"
+  },
+  "jest": {
+    "testPathDirs": ["tests"],
+    "testRegex": ".*.js$",
+    "testPathIgnorePatterns": [
+      "fixtures"
+    ]
+  }
+}
