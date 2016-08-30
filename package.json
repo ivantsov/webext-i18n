@@ -4,7 +4,7 @@
   "description": "FILL IT OUT",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest && coveralls < coverage/lcov.info",
     "lint": "eslint index.js tests"
   },
   "repository": {
@@ -31,16 +31,21 @@
     "fs-extra": "^0.30.0"
   },
   "devDependencies": {
+    "coveralls": "^2.11.12",
     "eslint": "^3.4.0",
     "eslint-config-airbnb-base": "^5.0.3",
     "eslint-plugin-import": "^1.14.0",
     "jest": "^14.1.0"
   },
   "jest": {
-    "testPathDirs": ["tests"],
-    "testRegex": ".*.js$",
+    "testRegex": "tests/.*.js$",
     "testPathIgnorePatterns": [
       "fixtures"
+    ],
+    "collectCoverage": true,
+    "coverageDirectory": "coverage",
+    "coveragePathIgnorePatterns": [
+      "tests"
     ]
   }
 }
