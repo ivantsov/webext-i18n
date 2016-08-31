@@ -27,7 +27,7 @@ const i18n = require('webext-i18n');
 
 i18n({
     inputDir: './src/locales',
-    outputDir: './dist/locales
+    outputDir: './dist/locales'
 }).then(res => console.log('Generating locales is finished.');
 ```
 
@@ -66,7 +66,7 @@ But we can go further and use the value of a `message` field as the value of a t
 ```json
 {
     "title": "Super title",
-    "error": "message": "Something went wrong..."
+    "error": "Something went wrong..."
 }
 ```
 
