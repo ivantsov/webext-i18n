@@ -12,7 +12,7 @@
     "url": "git+https://github.com/ivantsov/webext-i18n.git"
   },
   "keywords": [
-    "web-extension",
+    "webextension",
     "extension",
     "webext",
     "i18n",
