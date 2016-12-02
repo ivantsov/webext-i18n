@@ -1,6 +1,3 @@
-jest.unmock('path');
-jest.unmock('../index');
-
 const path = require('path');
 const fs = require('fs-extra');
 const i18n = require('../index');
@@ -36,19 +33,19 @@ describe('i18n', () => {
     });
 
     it('no files found', () => {
-        fs.readdirSync.mockReturnValue([]);
+        fs.readdirSync = jest.fn(() => []);
 
-        expect(() => i18n(validParams)).toThrowError(/no files found/i);
+        expect(() => i18n(validParams)).toThrowError('No files found.');
     });
 
     it('works', () => {
-        fs.readdirSync.mockReturnValue(['en.js', 'de.js']);
+        fs.readdirSync = jest.fn(() => ['en.js', 'de.js']);
         fs.outputJSONSync = jest.fn();
 
         return i18n(validParams).then(() => {
-            expect(fs.outputJSONSync.mock.calls.length).toBe(2);
+            expect(fs.outputJSONSync).toHaveBeenCalledTimes(2);
             expect(fs.outputJSONSync).toBeCalledWith(path.join(outputDir, 'en/messages.json'), outputFixtures.en);
-            expect(fs.outputJSONSync).toBeCalledWith(path.join(outputDir, 'de/messages.json'), outputFixtures.de);
+            expect(fs.outputJSONSync).lastCalledWith(path.join(outputDir, 'de/messages.json'), outputFixtures.de);
         });
     });
 });

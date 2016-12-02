@@ -1,8 +1,8 @@
 module.exports = {
     test1: {
         test11: {
-            test111: 'EN_test3',
-            test112: 'EN_test4'
+            test111: 'EN_test111',
+            test112: 'EN_test112'
         },
         test12: {
             test121: 'EN_test121',
@@ -16,5 +16,10 @@ module.exports = {
     test2: {
         test21: 'EN_test21'
     },
-    test3: 'EN_test3'
+    test3: 'EN_test3',
+    test4: [
+        'EN_test41',
+        'EN_test42',
+        'EN_test43'
+    ]
 };
