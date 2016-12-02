@@ -5,12 +5,11 @@ module.exports = {
     },
     rules: {
         indent: ['error', 4],
-        'linebreak-style': 'off',
         'comma-dangle': ['error', 'never'],
-        'max-len': 'off',
         'object-curly-spacing': ['error', 'never'],
         'brace-style': ['error', 'stroustrup', {
             'allowSingleLine': false
-        }]
+        }],
+        'arrow-parens': 'off'
     }
 };

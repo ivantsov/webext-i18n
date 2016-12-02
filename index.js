@@ -40,7 +40,8 @@ function generate({inputDir, outputDir} = {}) {
     return new Promise(resolve => {
         files.forEach(filename => {
             const name = path.basename(filename, '.js');
-            const content = require(path.join(srcDir, filename)); // eslint-disable-line global-require
+            // eslint-disable-next-line global-require, import/no-dynamic-require
+            const content = require(path.join(srcDir, filename));
 
             fs.outputJSONSync(path.join(distDir, name, 'messages.json'), flatMap(content));
         });
