@@ -4,7 +4,9 @@
   "description": "Package for simplifying work with i18n in Web Extensions",
   "main": "index.js",
   "scripts": {
-    "test": "jest && coveralls < coverage/lcov.info",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage && codecov",
     "lint": "eslint index.js tests"
   },
   "repository": {
