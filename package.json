@@ -1,6 +1,6 @@
 {
   "name": "webext-i18n",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Package for simplifying work with i18n in WebExtensions",
   "main": "index.js",
   "scripts": {
