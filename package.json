@@ -1,9 +1,10 @@
 {
   "name": "webext-i18n",
   "version": "1.0.0",
-  "description": "Package for simplifying work with i18n in Web Extensions",
+  "description": "Package for simplifying work with i18n in WebExtensions",
   "main": "index.js",
   "scripts": {
+    "prepublish": "npm run lint && npm test",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage && codecov",

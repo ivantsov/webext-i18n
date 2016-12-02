@@ -1,10 +1,10 @@
 # webext-i18n
 
 [![Build Status](https://travis-ci.org/ivantsov/webext-i18n.svg?branch=master)](https://travis-ci.org/ivantsov/webext-i18n)
-[![Coverage Status](https://coveralls.io/repos/github/ivantsov/webext-i18n/badge.svg?branch=master)](https://coveralls.io/github/ivantsov/webext-i18n?branch=master)
+[![codecov](https://codecov.io/gh/ivantsov/webext-i18n/branch/master/graph/badge.svg)](https://codecov.io/gh/ivantsov/webext-i18n)
 [![npm version](https://badge.fury.io/js/webext-i18n.svg)](https://badge.fury.io/js/webext-i18n)
 
-This package simplifies work with i18n in Web Extensions.
+This package simplifies work with i18n in WebExtensions.
 
 ### Install
 
@@ -15,10 +15,10 @@ This package simplifies work with i18n in Web Extensions.
 For instance, you have the following structure:
 
 ```
-/src
-    /locales
-        en.js
-        de.js
+src
+└── locales
+    ├── en.js
+    └── de.js   
 ```
 
 And `en.js` may contain something like that:
@@ -35,12 +35,16 @@ And `en.js` may contain something like that:
     },
     contentScript: {
        action: 'Super action name',
-       text: 'Lorem ipsum'
+       text: 'Lorem ipsum',
+       items: [
+           'First item',
+           'Second item'
+       ]
     }
 }
 ```
 
-Yeah, **nested** translation **entities** **without** specifying **`message` field**! And yes, it's not an appropriate format for a Web Extension, so you need to run the code below to generate a proper locales files:
+Yeah, **nested** translation **entities without** specifying **`message` field**! And yes, it's not an appropriate format for WebExtensions, so you need to run the code below to generate a proper locales files:
 
 ```js
 const i18n = require('webext-i18n');
@@ -51,7 +55,7 @@ i18n({
 }).then(res => console.log('Generating locales is finished.');
 ```
 
-It will create `dist/locales` directory with `en.json` and `de.json` files inside. And `en.json` will be look like:
+It will create `dist/locales` directory with `en.json` and `de.json` files inside. And `en.json` looks like that:
 
 ```json
 {
@@ -72,6 +76,12 @@ It will create `dist/locales` directory with `en.json` and `de.json` files insid
     },
     "contentScript_text": {
         "message": "Lorem ipsum"
+    },
+    "contentScript_items_0": {
+        "message": "First item"
+    },
+    "contentScript_items_1": {
+        "message": "Second item"
     }
 }
 ```
